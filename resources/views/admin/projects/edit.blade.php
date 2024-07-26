@@ -13,7 +13,7 @@
 
 
     <form action="{{route('admin.projects.update',$project)}}" method="POST">
-        @method ('PUT')
+        @method ('PATCH')
         @csrf
         <div class="mb-3">
             <label for="project-title" class="form-label">Titolo</label>
@@ -25,6 +25,25 @@
         </div>
         <button class="btn btn-primary">Aggiorna Project</button>
     </form>
+    <hr>
+
+    <hr>
+    <div class="mb-3">
+        <label for="techs" class="form-label">Tecnologie usate</label>
+        @foreach ($technologies as $technology)
+            <div class="form-check form-switch ">
+
+               
+                
+                
+                <input class="form-check-input" type="checkbox" role="switch" id="technlogy-{{$technology->id}}"
+                value="{{$technology->id}}" name="technologies[]" {{$project->technologies->contains($technology) ? 'checked':''}}>
+                <label class="form-check-label" for="technlogy-{{$technology->id}}">{{$technology->name}}</label>
+
+
+            </div>
+        @endforeach    
+        </div>
     <hr>
     <a href="{{route('admin.projects.index')}}" class="btn btn-info">Torna alla lista dei project</a>
 </div>

@@ -15,6 +15,12 @@
     Category: {{$project->type?->name}}
     
     <hr>
+    <ul>
+        @foreach($project->technologies as $technology)
+        <li>{{$technology->name}}</li>
+        @endforeach
+    </ul>
+    <hr>
     <a href="{{route('admin.projects.index')}}" class="btn btn-info">Torna alla lista dei project</a>
 </div>
 @endsection

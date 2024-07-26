@@ -30,6 +30,17 @@
                 @endforeach
             </select>
         </div>
+
+        <div class="mb-3">
+        <label for="techs" class="form-label">Tecnologie usate</label>
+        @foreach ($technologies as $technology)
+            <div class="form-check form-switch ">
+                <input class="form-check-input" type="checkbox" role="switch" id="technlogy-{{$technology->id}}"
+                value="{{$technology->id}}" name="technologies[]">
+                <label class="form-check-label" for="technlogy-{{$technology->id}}">{{$technology->name}}</label>
+            </div>
+        @endforeach    
+        </div>
         <button class="btn btn-primary">Crea Project</button>
     </form>
     <hr>
