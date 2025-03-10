@@ -5,7 +5,8 @@
 
     <div class="header-page d-flex justify-content-between align-items-center mb-3">
         <h1>{{$project->title}}</h1>
-        <button class="btn btn-primary">Edit</button>
+        <a href="{{route('admin.projects.edit', $project->id)}}" as="button" class="btn btn-primary">Edit</a>
+        <!-- <button class="btn btn-primary">Edit</button> -->
     </div>
 
 
